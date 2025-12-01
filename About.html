@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      position: relative;
+      min-height: 100vh;
+    }
+    h1, p, h4 {
+      color: rgb(106, 114, 215);
+    }
+    .nav-links {
+      text-align: center;
+      display: inline-flex;
+      gap: 30px;
+      padding: 10px 20px;
+      background-color: black;
+      border-radius: 0 0 40px 30px;
+    }
+    .nav-links a {
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: red;
+    }
+    .content-section {
+      display: none;
+      padding: 20px;
+      background-color: #f0f0f0;
+      margin-top: 10px;
+      border-left: 3px solid black;
+    }
+    #purpose {
+      background-color: #f5f5f5;
+      padding: 40px 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: center;
+      animation: fadeInUp 1s ease-out;
+    }
+    #purpose video {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      animation: zoomIn 1s ease-out 0.5s;
+      animation-fill-mode: both;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes zoomIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    #vision, #mission {
+      background-color: #e8f0fe;
+      padding: 40px 20px;
+      border-radius: 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: center;
+      animation: fadeInUp 1s ease-out;
+    }
+    #vision img, #mission img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      animation: zoomIn 1s ease-out 0.5s;
+      animation-fill-mode: both;
+    }
+    .watermark {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 1;
+    }
+    .watermark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .stats-container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 40px auto;
+    }
+    .item {
+      background-color: #1e90ff;
+      color: white;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      min-width: 150px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .item:hover {
+      transform: scale(1.05);
+    }
+    .item dd {
+      font-size: 2em;
+      margin: 0;
+      font-weight: bold;
+    }
+    .item dt {
+      margin-top: 5px;
+      font-size: 1em;
+    }
+    footer {
+      text-align: center;
+      opacity: 0.5;
+      color: rgb(25, 242, 5);
+      padding: 20px;
+      font-size: 14px;
+    }
+    .nav-link{
+                 display:flex;
+                     background-color: greenyellow;
+                     background-position: 30px center;
+                   justify-content: center;
+                   column-gap: 70px;
+                 text-decoration-color: black;
+                font-size: medium;
+              font-weight:bolder;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              padding: 10px;
+               flex-wrap: wrap;
+    }
+     @media (max-width: 768px) {
+  .nav-link {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }}
+  </style>
+</head>
+<body>
+  <div class="nav-link">
+    <a href="./network supply.html">HOME</a>
+            <a href="./dashboard.html">DASHBOARD</a>
+            <a href="./about.html">ABOUT US</a>
+            <a href="./services.html">SERVICES</a>
+            <a href="./contact.html">CONTACT</a>
+            </div>
+  <div class="watermark">
+    <img src="images/tech-info.jpg" alt="Watermark">
+  </div>
+
+  <h1>Who we are</h1>
+  <p>
+    Redefining the future of digital financial services through<br>
+    innovation and customer solutions.
+  </p>
+
+  <div class="nav-links">
+    <a href="#" onclick="showSection('purpose')">Our Purpose</a>
+    <a href="#" onclick="showSection('vision')">Our Vision</a>
+    <a href="#" onclick="showSection('mission')">Our Mission</a>
+  </div>
+
+  <div id="purpose" class="content-section">
+    <video width="640" height="360" controls>
+      <source src="images/vid.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div id="vision" class="content-section">
+    <h2>Our Vision</h2>
+    <img src="images/our-vision.png" alt="Our Vision">
+  </div>
+
+  <div id="mission" class="content-section">
+    <h3>Our Mission</h3>
+    <img src="images/our-mission.png" alt="Our Mission">
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.content-section').forEach(sec => {
+        sec.style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+
+  <br><br>
+
+  <div class="stats-container">
+    <div class="item">
+      <dd>99.9%</dd>
+      <dt>Uptime Guarantee</dt>
+    </div>
+    <div class="item">
+      <dd>500+</dd>
+      <dt>Enterprise Clients</dt>
+    </div>
+    <div class="item">
+      <dd>24/7</dd>
+      <dt>Support Available</dt>
+    </div>
+    <div class="item">
+      <dd>5M+</dd>
+      <dt>Transactions Processed</dt>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li>Network infrastructure</li>
+        <li>Payment processing</li>
+        <li>Global connectivity</li>
+        <li>Security Solutions</li>
+        <li>Analytics & insights</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li>About us</li>
+        <li>Careers</li>
+        <li>Blog</li>
+        <li>Press</li>
+        <li>Partners</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <ul>
+        <li>Documentation</li>
+        <li>API Reference</li>
+        <li>Help Center</li>
+        <li>Contact Support</li>
+        <li>System Status</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <footer>
+    &copy; 2025 Liz Network & Payments. All rights reserved.<br>
+    Privacy Policy &nbsp; | &nbsp; Terms of Service &nbsp; | &nbsp; Cookie Policy
+  </footer>
+</body>
+</html>

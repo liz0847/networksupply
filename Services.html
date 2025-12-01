@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: navy;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    .services {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .services {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .services h2, .services .subtitle {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 2em;
+    }
+
+    .highlight {
+      color: #00c4ff;
+    }
+
+    .subtitle {
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+
+    .service-card {
+      background: #f9f9f9;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+      color: black;
+      opacity: 0;
+     transform: translateY(30px);
+      animation: fadeSlideIn 0.8s ease forwards;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+ 
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.service-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.service-card:nth-child(5) {
+  animation-delay: 0.6s;
+}
+.service-card:nth-child(6) {
+  animation-delay: 0.8s;
+}
+
+
+    .service-card .icon {
+      font-size: 30px;
+      color: #00c4ff;
+      background: #e6f7ff;
+      padding: 15px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .service-card h3 {
+      margin: 0 0 15px;
+    }
+
+    .service-card p {
+      margin: 0 0 15px;
+      color: #555;
+    }
+
+    .service-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    .service-card ul li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .service-card ul li::before {
+      content: "•";
+      color: #007bff;
+      position: absolute;
+      left: 0;
+    }
+
+    .learn-more {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 2px solid #00c4ff;
+      color: #00c4ff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+     }
+   
+    .learn-more:hover {
+      background: #00c4ff;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    hr {
+      margin-top: 50px;
+    }
+    .nav-link{
+                 display:flex;
+                     background-color: greenyellow;
+                     background-position: 30px center;
+                   justify-content: center;
+                   column-gap: 70px;
+                 text-decoration-color: black;
+                font-size: medium;
+              font-weight:bolder;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              padding: 10px;
+              flex-wrap: wrap;
+    }
+     @media (max-width: 768px) {
+  .nav-link {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="nav-link">
+           <a href="./network supply.html">HOME</a>
+            <a href="./dashboard.html">DASHBOARD</a>
+            <a href="./about.html">ABOUT US</a>
+            <a href="./services.html">SERVICES</a>
+            <a href="./contact.html">CONTACT</a>
+            </div>
+
+<section class="services">
+  <h2>Our <span class="highlight">Services</span></h2>
+  <p class="subtitle">Comprehensive solutions for your network and payment infrastructure needs</p>
+
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-server"></i></div>
+    <h3>Network Infrastructure</h3>
+    <p>Enterprise-grade network solutions with 99.9% uptime guarantee</p>
+    <ul>
+      <li>Cloud Integration</li>
+      <li>Load Balancing</li>
+      <li>24/7 Monitoring</li>
+      <li>Scalable Architecture</li>
+    </ul>
+    <a href="#" class="learn-more">Learn More →</a>
+  </div>
+
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-credit-card"></i></div>
+    <h3>Payment Processing</h3>
+    <p>Secure, fast payment solutions for all business sizes</p>
+    <ul>
+      <li>Multi-currency Support</li>
+      <li>Fraud Detection</li>
+      <li>PCI Compliance</li>
+      <li>Real-time Analytics</li>
+    </ul>
+    <a href="#" class="learn-more">Learn More →</a>
+  </div>
+
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-globe"></i></div>
+    <h3>Global Connectivity</h3>
+    <p>Worldwide network coverage for seamless operations</p>
+    <ul>
+      <li>Edge Computing</li>
+      <li>CDN Integration</li>
+      <li>Low Latency</li>
+    </ul>
+    <a href="#" class="learn-more">Learn More →</a>
+  </div>
+
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-shield-alt"></i></div>
+    <h3>Security Solutions</h3>
+    <p>Advanced cybersecurity for your digital infrastructure</p>
+    <ul>
+      <li>Security Audits</li>
+      <li>End-to-End Encryption</li>
+      <li>Compliance Management</li>
+    </ul>
+    <a href="#" class="learn-more">Learn More →</a>
+  </div>
+</section>
+
+<hr>
+<b>Services</b><br>
+<ul style="color: grey; list-style: square; padding-left: 20px;">
+  <li>Network Infrastructure</li>
+  <li>Payment Processing</li>
+  <li>Global Connectivity</li>
+  <li>Security Solutions</li>
+</ul>
+<script>
+  // Select all service cards
+  const serviceCards = document.querySelectorAll('.service-card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Optional: animate once only
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  // Observe each card
+  serviceCards.forEach(card => {
+    observer.observe(card);
+  });
+</script>
+
+
+</body>
+</html>
